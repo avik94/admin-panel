@@ -1,0 +1,39 @@
+<nb-card-body>
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- main-form -->
+      <form >
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Event Name</b></label>
+          </div>  
+          <div class="col-sm-5">
+            <nb-select selected="1" style="width: 100%;max-width: 200rem;">
+                <nb-option value="1">Select Exitsting Event</nb-option>
+              <nb-option value="i+2" *ngFor = "let item of eventName let i = index">{{item.name}}</nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>New Event Name</b></label>
+          </div>  
+          <div class="col-sm-5">
+            <input type="text" nbInput fullWidth fieldSize="large"  placeholder="New Event Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-5 offset-sm-3">
+            <p><span style="color: red">Note:</span> This message will be sent to everyone registered.</p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-5 offset-sm-3">
+              <button class="messageBtn" type="submit" nbButton size="large" status="success">Update Event Name</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nb-card-body>

@@ -1,0 +1,45 @@
+<nb-card-body>
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- main-form -->
+        <form >
+          <div class="row">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Upload Splash Screen</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <input type="file" nbInput fullWidth fieldSize="large"  placeholder="Large Input" #fileInput>              
+            </div>
+            <div class="col-sm-4">
+              <button class="deselectButton" type="button" nbButton size="large" status="warning" (click)="removeFile();">Deselect Image </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 offset-sm-8">
+              <button class="flashButton" type="submit" nbButton size="large" status="success">Upload Flash Screen</button>
+            </div>
+          </div>
+        </form>
+        <!-- form-end -->
+      </div>
+    </div>
+
+
+    <!-- notice -->
+    <div class="row" style="padding-top: 30px;">
+      <div class="col-sm-5" style="border-right: 2px solid #888888">
+      </div>
+      <div class="col-sm-6" style="padding: 20px; margin:20px;">
+        <p><strong>File Format :</strong> .png, .jpg and .jpeg</p>
+        <p><strong>Max File Size :</strong> 2 MB</p>
+        <p><strong>Min Resolution :</strong> 200px*320px</p>
+        <p><strong>Max Resolution :</strong> 1080px*1920px</p>
+        <ol type="1"><h5 style="color:#f50c04;">Note:</h5>
+          <li>Please upload Portrait Image only.</li>
+          <li>Resolution describes the image size as the number of pixels it contains, typically as 'width x height'.</li>
+          <li> It may take sometime to render the uploaded Image.</li>
+        </ol>
+      </div>
+    </div>
+    
+  </nb-card-body>

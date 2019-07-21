@@ -1,0 +1,231 @@
+<nb-card-body>
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- main-form -->
+      <form>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Event Name</b></label>
+          </div>
+          <div class="col-sm-5">
+            <input type="text" nbInput fullWidth fieldSize="large" placeholder="Subject Text">
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Event Description</b></label>
+          </div>
+          <div class="col-sm-5">
+            <textarea nbInput fullWidth placeholder="Message Body"></textarea>
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Event Timing</b></label>
+          </div>
+          <div class="col-sm-5">
+            <input nbInput placeholder="Pick Date Range" [nbDatepicker]="rangepicker">
+            <nb-rangepicker #rangepicker></nb-rangepicker>
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Event Rules</b></label>
+          </div>
+          <div class="col-sm-5">
+            <textarea nbInput fullWidth placeholder="Event Rules"></textarea>
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Number of Exhibitors/QR Code</b></label>
+          </div>
+          <div class="col-sm-5">
+            <input type="number" nbInput fullWidth fieldSize="large" placeholder="Number of Exhibitors/QR Code">
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Maximum Number of Participants </b></label>
+          </div>
+          <div class="col-sm-5">
+            <input type="number" nbInput fullWidth fieldSize="large"
+              placeholder="Maximum Number of Participants per Term">
+          </div>
+        </div>
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Type of Questions</b></label>
+          </div>
+          <div class="col-sm-5">
+            <nb-select selected="1" style="width: 100%;max-width: 200rem;">
+              <nb-option value="1" (click)="normalOuestionEvent()">Types of Questions</nb-option>
+              <nb-option value="2" (click)="multipleChoice()">Multiple Choice</nb-option>
+              <nb-option value="2" (click)="text()">Text Based</nb-option>
+              <nb-option value="2" (click)="multipleChoiceText()">Multiple Choice & Text Based</nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <!-- ============ -->
+        <!-- ******* condition input ******* -->
+        <div *ngIf="normalOuestion">
+
+        </div>
+        <div *ngIf="multipleChoiceQuestion">
+          <!-- multipleChoiceQuestion-->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Number of Alternatives for a MCQ</b></label>
+            </div>
+            <div class="col-sm-5">
+              <input type="number" nbInput fullWidth fieldSize="large" value="5">
+            </div>
+          </div>
+          <!-- ============ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Hints Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- ============ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Images & Videos Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- multipleChoiceQuestion end -->
+        </div>
+        <div *ngIf="textQuestion">
+          <!-- textQuestion -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Hints Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- ================ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Images & Videos Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- textQuestion -->
+        </div>
+        <div *ngIf="multipleChoiceTextQuestion">
+          <!-- multipleChoiceTextQuestion -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Number of Alternatives for a MCQ</b></label>
+            </div>
+            <div class="col-sm-5">
+              <input type="number" nbInput fullWidth fieldSize="large" value="5">
+            </div>
+          </div>
+          <!-- ============ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Hints Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- ============ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Images & Videos Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Hints Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- ================ -->
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Images & Videos Allowed </b></label>
+            </div>
+            <div class="col-sm-5">
+              <nb-select selected="1">
+                <nb-option value="1">Yes</nb-option>
+                <nb-option value="2">No</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <!-- multipleChoiceTextQuestion end -->
+        </div>
+
+        <!-- ******* condition input ******* -->
+        <!-- ============ -->
+        <div class="row formInput">
+          <div class="col-sm-3">
+            <label class="splashScreen"><b>Scan QR Code</b></label>
+          </div>
+          <div class="col-sm-5">
+            <nb-select selected="1" style="width: 100%;max-width: 200rem;">
+              <nb-option value="1">Select</nb-option>
+              <nb-option value="2">Yes</nb-option>
+              <nb-option value="3">No</nb-option>
+            </nb-select>
+          </div>
+        </div>
+
+        <!-- from submit start here -->
+        <br>
+        <div class="row">
+          <div class="col-sm-5 offset-sm-3">
+            <button class="messageBtn" type="submit" nbButton size="large" status="success">Create Event</button>
+          </div>
+        </div>
+        <!-- from submit end here -->
+      </form>
+      <!-- main-form-end -->
+    </div>
+  </div>
+</nb-card-body>

@@ -1,0 +1,36 @@
+<nb-card-body>
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- main-form -->
+        <form >
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Subject</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Subject Text">
+            </div>
+          </div>
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Message</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <textarea nbInput fullWidth placeholder="Message Body"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5 offset-sm-3">
+              <p><span style="color: red">Note:</span> This message will be sent to everyone registered.</p>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-5 offset-sm-3">
+                <button class="messageBtn" type="submit" nbButton size="large" status="success">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nb-card-body>

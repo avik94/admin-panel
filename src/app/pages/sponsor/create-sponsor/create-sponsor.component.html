@@ -1,0 +1,64 @@
+<nb-card-body>
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- main-form -->
+        <form>
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Select Category</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <nb-select selected="1" style="width: 100%;max-width: 200rem;">
+                  <nb-option value="1">Select Category</nb-option>
+                <nb-option value="i+2" *ngFor = "let item of category let i = index">{{item.name}}</nb-option>
+              </nb-select>
+            </div>
+          </div>
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Name of Sponsor</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <input type="text" nbInput fullWidth fieldSize="large"  placeholder="Enter Sponsor Name">
+            </div>
+          </div>
+
+          <div class="row formInput">
+            <div class="col-sm-3">
+              <label class="splashScreen"><b>Upload Sponsor Logo</b></label>
+            </div>  
+            <div class="col-sm-5">
+              <input #fileInput type="file" nbInput fullWidth fieldSize="large"  placeholder="Large Input">
+            </div>
+          </div>    
+          <div class="row formInput">
+            <div class="col-sm-5 offset-sm-3">
+              <button class="sponsorBtn" type="button" status="primary" nbButton size="medium" (click)= "showFile();"> Show File</button>
+              <button class="sponsorBtn" type="button" status="warning" nbButton size="medium" (click)="removeFile(fileInput);"> Deselect File</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5 offset-sm-3">
+              <div class="preview" *ngIf = "preview">
+                <img [src]="imageSrc" class="img-responsive" class="previewImg">
+              </div>
+              <div>                
+                <p><strong>File Format :</strong> .png, .jpg and .jpeg</p>
+                <p><strong>Max File Size :</strong> 2 MB</p>
+                <p><strong>Min Resolution :</strong> 200px*320px</p>
+                <p><strong>Max Resolution :</strong> 1080px*1920px</p>
+              </div>
+            </div>
+          </div>    
+
+          <br>
+          <div class="row">
+            <div class="col-sm-5 offset-sm-3">
+                <button class="messageBtn" type="submit" nbButton size="large" status="success">Create Sponsor</button>
+            </div>
+          </div>          
+        </form>
+      </div>
+    </div>
+  </nb-card-body>
+
